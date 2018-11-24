@@ -10,6 +10,8 @@ import {User} from './user';
 })
 export class UserComponent implements OnInit {
     users: User[];
+    selectedUser: User;
+    selectedUserName = 'No User selected';
 
     constructor(private user: UserService) {
     }
@@ -24,7 +26,9 @@ export class UserComponent implements OnInit {
             this.users = users;
         });
     }
-    selectUser(selecteduser: User): void {
-        console.log ('User selected', selecteduser);
+
+    selectUser(user: User): void {
+        this.selectedUser = user;
+        this.selectedUserName = this.selectedUser.name;
     }
 }
