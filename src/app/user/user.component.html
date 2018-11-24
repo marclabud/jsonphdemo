@@ -1,3 +1,6 @@
-<p>
-  user works!
-</p>
+<h3>Users</h3>
+<div *ngFor="let user of users">
+  <mat-card>
+    <mat-card-title>{{user.name}}</mat-card-title>
+  </mat-card>
+</div>
