@@ -1,3 +1,6 @@
-<p>
-  todo works!
-</p>
+<mat-selection-list>
+    <mat-list-option *ngFor="let toDo of todos">
+      {{toDo.title}}
+    </mat-list-option>
+</mat-selection-list>
+
