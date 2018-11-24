@@ -24,4 +24,7 @@ export class UserComponent implements OnInit {
             this.users = users;
         });
     }
+    selectUser(selecteduser: User): void {
+        console.log ('User selected', selecteduser);
+    }
 }

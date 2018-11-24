@@ -1,6 +1,13 @@
-<h3>Users</h3>
+<h2>Users</h2>
 <div *ngFor="let user of users">
   <mat-card>
-    <mat-card-title>{{user.name}}</mat-card-title>
+    <mat-card-title>Name: {{user.name}}</mat-card-title>
+    <mat-card-content>
+      <p>E-Mail: {{user.email}}</p>
+      <p>Website: {{user.website}}</p>
+    </mat-card-content>
+    <mat-card-actions>
+    <button mat-button (click)="selectUser(user)">Select</button>
+    </mat-card-actions>
   </mat-card>
 </div>
