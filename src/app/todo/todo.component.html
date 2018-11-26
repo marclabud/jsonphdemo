@@ -1,5 +1,5 @@
 <mat-selection-list>
-    <mat-list-option *ngFor="let toDo of todos">
+    <mat-list-option *ngFor="let toDo of todos" [selected]="toDo.completed">
       {{toDo.title}}
     </mat-list-option>
 </mat-selection-list>
