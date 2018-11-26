@@ -10,5 +10,5 @@ with angular-cli--ghpages
 
 for angular 7
 
-``npx ngh --dir=dist/jsonphdemo```
+```npx ngh --dir=dist/jsonphdemo```
 
