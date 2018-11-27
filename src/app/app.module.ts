@@ -11,6 +11,8 @@ import {MatButtonModule, MatIconModule, MatListModule, MatSidenavModule, MatTool
 import {MatCardModule} from '@angular/material/card';
 import {UserComponent} from './user/user.component';
 import {TodoComponent} from './todo/todo.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
     declarations: [
@@ -31,6 +33,7 @@ import {TodoComponent} from './todo/todo.component';
         MatIconModule,
         MatListModule,
         MatCardModule,
+        ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     ],
     providers: [],
     bootstrap: [AppComponent]
