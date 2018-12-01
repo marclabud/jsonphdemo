@@ -30,6 +30,7 @@ export class TodoComponent implements OnInit {
         if ( event instanceof MatSelectionListChange) {
             this.currentTodo = event.option.value;
             this.currentTodo.completed = !this.currentTodo.completed;
+            this.todos[this.currentTodo.id - 1].completed = this.currentTodo.completed;
         } else {
             console.error ('error', 'Wrong event Class');
         }
