@@ -1,7 +1,6 @@
-<mat-selection-list #toDolist (selectionChange)="toggleSelection($event)">
+<mat-selection-list (selectionChange)="toggleSelection($event)">
     <mat-list-option
             *ngFor="let toDo of todos" [value]='toDo' [selected]="toDo.completed">
-      {{toDo.title}}
+        {{toDo.title}}
     </mat-list-option>
 </mat-selection-list>
-
