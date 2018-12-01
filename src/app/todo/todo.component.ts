@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {TodoService} from './service/todo.service';
 import {ToDo} from './todo';
+import {MatSelectionListChange} from '@angular/material';
 
 @Component({
     selector: 'app-todo',
@@ -9,6 +10,7 @@ import {ToDo} from './todo';
 })
 export class TodoComponent implements OnInit {
     todos: ToDo[];
+    currentTodo: ToDo;
 
     constructor(private todo: TodoService) {
     }
@@ -22,5 +24,14 @@ export class TodoComponent implements OnInit {
         (todos => {
             this.todos = todos;
         });
+    }
+
+    toggleSelection(event: MatSelectionListChange) {
+        if ( event instanceof MatSelectionListChange) {
+            this.currentTodo = event.option.value;
+            this.currentTodo.completed = !this.currentTodo.completed;
+        } else {
+            console.error ('error', 'Wrong event Class');
+        }
     }
 }
