@@ -20,3 +20,23 @@ for angular 6+
 
 ```npx ngh --dir=dist/jsonphdemo```
 
+# Publish to Docker
+
+Dockerfile
+
+```
+FROM nginx
+WORKDIR /usr/share/nginx/html
+COPY /dist/jsonphdemo .
+ ```
+
+Build image ng-jsonphdemo
+
+```docker image build -t ng-jsonphdemo .```
+
+Run Image on port 3000
+
+```docker run -p 3000:80 --rm ng-jsonphdemo```
+
+Navigate to localhost:3000 in Browser to run the app.
+
