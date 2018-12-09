@@ -22,5 +22,19 @@
         ]
       }
     }
+  ],
+
+  "dataGroups": [
+    {
+      "name": "jsonplaceholder",
+      "urls": [
+        "https://jsonplaceholder.typicode.com/**"
+      ],
+      "cacheConfig": {
+        "maxSize": 100000000,
+        "maxAge": "3d",
+        "timeout": "1m"
+      }
+    }
   ]
 }
