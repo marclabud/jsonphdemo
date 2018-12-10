@@ -339,6 +339,10 @@ MIT
 
 @angular/material/list
 
+@angular/material/form-field
+
+@angular/material/autocomplete
+
 @angular/material/icon
 
 @angular/material/sidenav
