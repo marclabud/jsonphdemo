@@ -13,13 +13,19 @@ import {UserComponent} from './user/user.component';
 import {TodoComponent} from './todo/todo.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { UserselectionComponent } from './userselection/userselection.component';
+import { MatAutocompleteModule} from '@angular/material/autocomplete';
+import { MatFormFieldModule} from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
     declarations: [
         AppComponent,
         NavbarComponent,
         UserComponent,
-        TodoComponent
+        TodoComponent,
+        UserselectionComponent
     ],
     imports: [
         BrowserModule,
@@ -33,7 +39,11 @@ import { environment } from '../environments/environment';
         MatIconModule,
         MatListModule,
         MatCardModule,
+        MatAutocompleteModule,
+        MatFormFieldModule,
+        MatInputModule,
         ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+        ReactiveFormsModule,
     ],
     providers: [],
     bootstrap: [AppComponent]

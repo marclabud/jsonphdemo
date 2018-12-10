@@ -1,0 +1,10 @@
+<mat-form-field>
+    <label>
+        <input matInput type="text" placeholder="Name" [formControl]="UserListControl" [matAutocomplete]="auto">
+    </label>
+    <mat-autocomplete  #auto="matAutocomplete" [displayWith]="displayFn">
+        <mat-option *ngFor="let user of users" [value]="user">
+            {{ user.name }}
+        </mat-option>
+    </mat-autocomplete>
+</mat-form-field>

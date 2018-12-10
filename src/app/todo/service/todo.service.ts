@@ -13,4 +13,7 @@ export class TodoService {
     getToDos(): Observable<ToDo[]> {
         return this.httpService.getToDos();
     }
+    getToDosByUser(userId: number): Observable<ToDo[]> {
+        return this.httpService.getToDosByUserId(userId);
+    }
 }

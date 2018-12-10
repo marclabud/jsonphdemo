@@ -26,6 +26,13 @@ export class TodoComponent implements OnInit {
         });
     }
 
+    getToDosByUser(userId: number): void {
+        this.todo.getToDosByUser(userId).subscribe
+        (todos => {
+            this.todos = todos;
+        });
+    }
+
     toggleSelection(event: MatSelectionListChange) {
         if ( event instanceof MatSelectionListChange) {
             this.currentTodo = event.option.value;
