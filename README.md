@@ -35,7 +35,7 @@ Build Production Version
  
 ```ng build --prod```
 
-##commands in terminal
+## commands in terminal
 
 Build image ng-jsonphdemo
 
@@ -47,7 +47,7 @@ Run Image on port 3000
 
 Navigate to localhost:3000 in Browser to run the app.
 
-##docker-compose
+## docker-compose
 
 start
 
