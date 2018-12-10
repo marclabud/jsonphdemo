@@ -10,7 +10,7 @@ Used ressources for demo:
  
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.6.
 
-# Publish to github
+# Publish app to github
 
 with angular-cli-ghpages
 
@@ -20,7 +20,9 @@ for angular 6+
 
 ```npx ngh --dir=dist/jsonphdemo```
 
-# Publish to Docker
+# Publish app to Docker
+
+
 
 Dockerfile
 
@@ -29,6 +31,11 @@ FROM nginx
 WORKDIR /usr/share/nginx/html
 COPY /dist/jsonphdemo .
  ```
+Build Production Version
+ 
+```ng build --prod```
+
+##commands in terminal
 
 Build image ng-jsonphdemo
 
@@ -40,3 +47,16 @@ Run Image on port 3000
 
 Navigate to localhost:3000 in Browser to run the app.
 
+##docker-compose
+
+start
+
+```docker-compose up```
+
+stop
+
+```docker-compose down```
+
+literature:
+
+[Medium Article: Your Angular apps as Docker containers](https://medium.com/@DenysVuika/your-angular-apps-as-docker-containers-471f570a7f2)
