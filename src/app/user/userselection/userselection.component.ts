@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl} from '@angular/forms';
-import {UserService} from '../shared/user.service';
-import {User} from '../user/user';
+import {UserService} from '../../shared/user.service';
+import {User} from '../user';
 import {Observable} from 'rxjs';
 import {startWith, switchMap} from 'rxjs/operators';
 
@@ -38,11 +38,4 @@ export class UserselectionComponent implements OnInit {
         return val ? val.name : val;
     }
 
-    private _filter(value: string): User[] {
-        const filterValue = value.toLowerCase();
-
-        return this.users.filter(user => {
-            user.name.toLowerCase().includes(filterValue);
-        });
-    }
 }
