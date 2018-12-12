@@ -1,7 +1,8 @@
 import {Injectable} from '@angular/core';
 import {HttpService} from './http.service';
-import {Observable, of} from 'rxjs';
+import {Observable} from 'rxjs';
 import {User} from '../user/user';
+import {map, tap} from 'rxjs/operators';
 
 @Injectable({
     providedIn: 'root'
@@ -17,12 +18,10 @@ export class UserService {
 
 
     getFilteredUsers(filtertext: string): Observable<User[]> {
-        // clear if no filtertext
-        if (!filtertext.trim()) {
-            return of([]);
-        }
         return this.httpService.getUsers().pipe(
-            // filter((users) => users.name.includes(filtertext))
+            map(users => users.filter(user => {
+                return user.name.toLowerCase().includes(filtertext);
+            }))
         );
     }
 }
