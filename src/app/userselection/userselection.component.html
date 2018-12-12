@@ -3,7 +3,7 @@
         <input matInput type="text" placeholder="Name" [formControl]="UserListControl" [matAutocomplete]="auto">
     </label>
     <mat-autocomplete  #auto="matAutocomplete" [displayWith]="displayFn">
-        <mat-option *ngFor="let user of users" [value]="user">
+        <mat-option *ngFor="let user of filteredUsers | async" [value]="user">
             {{ user.name }}
         </mat-option>
     </mat-autocomplete>
