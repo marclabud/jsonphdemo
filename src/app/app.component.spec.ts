@@ -1,5 +1,4 @@
 import {async, TestBed} from '@angular/core/testing';
-import {RouterTestingModule} from '@angular/router/testing';
 import {AppComponent} from './app.component';
 import {NavbarComponent} from './navbar/navbar.component';
 import {LayoutModule} from '@angular/cdk/layout';
@@ -7,13 +6,14 @@ import {MatButtonModule, MatIconModule, MatListModule, MatSidenavModule, MatTool
 import {BrowserModule} from '@angular/platform-browser';
 import {AppRoutingModule} from './app-routing.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {UserModule} from './user/user.module';
+import {TodoComponent} from './todo/todo.component';
 
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
         imports: [
-            RouterTestingModule,
             BrowserModule,
             AppRoutingModule,
             BrowserAnimationsModule,
@@ -22,12 +22,14 @@ describe('AppComponent', () => {
             MatButtonModule,
             MatSidenavModule,
             MatIconModule,
-            MatListModule
+            MatListModule,
+            UserModule
 
         ],
       declarations: [
           AppComponent,
-          NavbarComponent
+          NavbarComponent,
+          TodoComponent
       ],
     }).compileComponents();
   }));
