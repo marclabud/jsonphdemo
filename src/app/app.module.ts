@@ -8,7 +8,7 @@ import {NavbarComponent} from './navbar/navbar.component';
 import {TodoComponent} from './todo/todo.component';
 import {ServiceWorkerModule} from '@angular/service-worker';
 import {environment} from '../environments/environment';
-
+import { LoggerModule, NgxLoggerLevel } from 'ngx-logger';
 import {MaterialModule} from './material-module';
 import {UserModule} from './user/user.module';
 
@@ -26,6 +26,7 @@ import {UserModule} from './user/user.module';
         BrowserAnimationsModule,
         MaterialModule,
         ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production}),
+        LoggerModule.forRoot({level: NgxLoggerLevel.DEBUG, serverLogLevel: NgxLoggerLevel.ERROR}),
         UserModule
     ],
     providers: [],
