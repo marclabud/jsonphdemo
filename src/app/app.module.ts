@@ -11,6 +11,7 @@ import {environment} from '../environments/environment';
 import { LoggerModule, NgxLoggerLevel } from 'ngx-logger';
 import {MaterialModule} from './material-module';
 import {UserModule} from './user/user.module';
+import {HttpErrorHandler} from './shared/http-error-handler.service';
 
 
 @NgModule({
@@ -29,7 +30,7 @@ import {UserModule} from './user/user.module';
         LoggerModule.forRoot({level: NgxLoggerLevel.DEBUG, serverLogLevel: NgxLoggerLevel.ERROR}),
         UserModule
     ],
-    providers: [],
+    providers: [HttpErrorHandler],
     bootstrap: [AppComponent]
 })
 export class AppModule {
