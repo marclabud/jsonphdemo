@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {TodoService} from './service/todo.service';
 import {ToDo} from './todo';
-import {MatSelectionListChange} from '@angular/material';
+import { MatSelectionListChange } from '@angular/material/list';
 
 @Component({
     selector: 'app-todo',
